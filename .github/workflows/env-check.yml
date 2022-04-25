@@ -10,7 +10,7 @@ on:
       - reopened
 
 jobs:
-  pr-check:
+  env-check:
     runs-on: ubuntu-latest
 
     steps:
