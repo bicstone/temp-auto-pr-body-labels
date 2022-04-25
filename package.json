@@ -1,0 +1,22 @@
+{
+  "name": "temp-auto-pr-body-labels",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bicstone/temp-auto-pr-body-labels.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bicstone/temp-auto-pr-body-labels/issues"
+  },
+  "homepage": "https://github.com/bicstone/temp-auto-pr-body-labels#readme",
+  "devDependencies": {
+    "auto": "10.36.5"
+  }
+}

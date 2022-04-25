@@ -1,0 +1,31 @@
+name: Auto
+
+on:
+  pull_request:
+    types:
+      - labeled
+      - unlabeled
+      - opened
+      - edited
+      - reopened
+
+jobs:
+  pr-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          cache: 'npm'
+
+      - run: npm install
+
+      - run: |
+          npx auto pr-check \
+          --url ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID} \
+          --pr $(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH") \
+          --verbose -v -vv
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
