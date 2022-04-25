@@ -28,4 +28,4 @@ jobs:
           --pr $(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH") \
           --verbose -v -vv
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
