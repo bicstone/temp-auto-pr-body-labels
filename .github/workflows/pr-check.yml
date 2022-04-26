@@ -25,9 +25,16 @@ jobs:
 
       - run: npm install
 
-      - run: cd ./auto/ && yarn install
+      - run: ls
 
-      - run: cd ./auto/ && yarn build
+      - run: ls
+        working-directory: ./auto/
+
+      - run: yarn install
+        working-directory: ./auto/
+
+      - run: yarn build
+        working-directory: ./auto/
 
       - run: |
           node ./auto/packages/cli/dist/bin/auto.js pr-check \
