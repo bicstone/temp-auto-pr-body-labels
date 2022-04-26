@@ -25,7 +25,7 @@ jobs:
       - run: npm install
 
       - run: |
-          npx auto pr-check \
+          node ./auto/packages/cli/dist/bin/auto.js pr-check \
           --url ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID} \
           --pr $(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH") \
           --verbose -v -vv
