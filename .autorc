@@ -1,6 +1,11 @@
 {
   "plugins": [
     "npm",
-    "pr-body-labels"
+    [
+      "pr-body-labels",
+      {
+        "removeStaleLabels": false
+      }
+    ]
   ]
 }
